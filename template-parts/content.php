@@ -22,6 +22,8 @@
 		</div>
 	</header><!-- .entry-header -->
 
-	<?php coolmat_post_thumbnail(); ?>
+	<div class="post-thumbnail">
+		<?php the_post_thumbnail(); ?>
+	</div><!-- .post-thumbnail -->
 
 </article><!-- #post-<?php the_ID(); ?> -->

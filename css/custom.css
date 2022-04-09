@@ -1,3 +1,121 @@
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
 body {
-  background-color: red;
+  font-family: 'Hanna', sans-serif;
+  color: #000;
+  font-size: 16px;
+  line-height: 1.5;
 }
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Utilities CLasses */
+.container {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.magenta {
+  color: #ff0066;
+}
+
+.yellow {
+  color: #f8e71c;
+}
+
+/* Layout */
+
+/* Header */
+.site-header {
+  padding: 1.875em 0;
+  border-bottom: 1px solid #cccccc;
+  margin: 0 1.875em;
+}
+
+.header-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 5rem;
+  height: 6.8rem;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 46px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-transform: lowercase;
+}
+
+.language-select {
+  font-size: 0.75rem;
+}
+
+/* Hero */
+.hero {
+  padding: 8.8em 8.8em 3.1em 8.8em;
+  background-image: url('../assets/intro-bg.svg');
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.hero-inner {
+  text-align: center;
+}
+
+.hero-text {
+  font-size: 11.25rem;
+  line-height: 1;
+  color: #ff0066;
+}
+
+.hero-description {
+  margin-top: 8.6em;
+  font-size: 1.25rem;
+}
+
+.hero-sitename {
+  color: #000;
+}
+
+/* Intro */
+.intro {
+  padding: 19.3em 16.8em;
+  background-image: url(../assets/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.intro-inner {
+  text-align: center;
+  color: #fff;
+}
+
+.intro-title {
+  font-size: 1.25rem;
+  border-bottom: 3.5px solid #fff;
+  line-height: 1;
+  display: inline-block;
+}
+.intro-description {
+  font-size: 3.125rem;
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
+  line-height: 1.1;
+}
+
+/* Menu */

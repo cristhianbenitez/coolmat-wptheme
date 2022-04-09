@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The main template file
  *
@@ -17,38 +18,62 @@ get_header();
 
 <main id="primary" class="site-main">
 
-  <?php
-		if ( have_posts() ) :
+	<section class="hero">
+		<div class="hero-inner container">
+			<h1 class="hero-text">
+				<span class="hero-sitename ">
+					<?php bloginfo('name')  ?>
+				</span>
+				fried seaweed roll
+			</h1>
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-  <header>
-    <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-  </header>
-  <?php
-			endif;
+			<p class="hero-description magenta">
+				<span class="hero-sitename">
+					<?php bloginfo('name')  ?></span> is a restaurant that creates future flavor nostalgia of street food.
+			</p>
+		</div>
+	</section>
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+	<section class="intro">
+		<div class="intro-inner container">
+			<h2 class="intro-title">Introducing Cool Mat </h2>
+			<p class="intro-description">
+				street food that was born in tough times.
+				street food that everybody loves.<br>
+				<span class="yellow"> <?php bloginfo('name') ?></span> is on a mission to provide future
+				flavor nostalgia of street food for men,
+				women, children, grandpas and grandmas.
+				we only use the best ingredients.
+			</p>
+		</div>
+	</section>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+	<?php
+	if (have_posts()) :
 
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
+		if (is_home() && !is_front_page()) :
+	?>
+			<header>
+				<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+			</header>
+	<?php
 		endif;
-		?>
+
+		/* Start the Loop */
+		while (have_posts()) :
+			the_post();
+			get_template_part('template-parts/content', get_post_type());
+
+		endwhile;
+
+		the_posts_navigation();
+
+	else :
+
+		get_template_part('template-parts/content', 'none');
+
+	endif;
+	?>
 
 </main><!-- #main -->
 
