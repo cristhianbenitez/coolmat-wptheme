@@ -34,7 +34,7 @@ get_header();
 		</div>
 	</section>
 
-	<section class="intro">
+	<section class="intro" id="home">
 		<div class="intro-inner container">
 			<h2 class="intro-title">Introducing Cool Mat </h2>
 			<p class="intro-description">
@@ -48,33 +48,38 @@ get_header();
 		</div>
 	</section>
 
-	<?php
-	if (have_posts()) :
+	<section class="menu-list" id='menu'>
+		<h2 class="menu-list-title">Menu</h2>
+		<div class="menu-list-grid">
+			<?php
+			if (have_posts()) :
 
-		if (is_home() && !is_front_page()) :
-	?>
-			<header>
-				<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-			</header>
-	<?php
-		endif;
+				if (is_home() && !is_front_page()) :
+			?>
+					<header>
+						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+					</header>
+			<?php
+				endif;
 
-		/* Start the Loop */
-		while (have_posts()) :
-			the_post();
-			get_template_part('template-parts/content', get_post_type());
+				/* Start the Loop */
+				while (have_posts()) :
+					the_post();
+					get_template_part('template-parts/content', get_post_type());
 
-		endwhile;
+				endwhile;
 
-		the_posts_navigation();
+				the_posts_navigation();
 
-	else :
+			else :
 
-		get_template_part('template-parts/content', 'none');
+				get_template_part('template-parts/content', 'none');
 
-	endif;
-	?>
+			endif;
+			?>
 
+		</div>
+	</section>
 </main><!-- #main -->
 
 <?php
