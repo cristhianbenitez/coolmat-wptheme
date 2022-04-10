@@ -7,7 +7,7 @@
  *
  * @package coolmat
  */
-
+global $item_number;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -16,6 +16,13 @@
 		<h1 class="entry-title">
 			<?php the_title() ?>
 		</h1>
+
+		<div class="entry-number">
+			<span>
+				<?php echo $item_number ?>
+			</span>
+		</div>
+
 		<!-- Price (content) on the right -->
 		<div class="entry-price">
 			<?php the_content() ?>

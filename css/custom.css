@@ -47,6 +47,12 @@ a {
   justify-content: space-between;
 }
 
+.site-branding {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .logo {
   width: 5rem;
   height: 6.8rem;
@@ -73,7 +79,6 @@ a {
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
-  height: 100vh;
 }
 
 .hero-inner {
@@ -97,7 +102,7 @@ a {
 
 /* Intro */
 .intro {
-  padding: 19.3em 16.8em;
+  padding: 19.3rem 16.8rem;
   background-image: url(../assets/hero-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -122,7 +127,8 @@ a {
 
 /* Menu */
 
-.menu-list-title {
+.menu-list-title,
+.direction-title {
   text-align: center;
   font-size: 1.25rem;
   padding: 3.125rem 0;
@@ -148,6 +154,8 @@ a {
   justify-content: space-between;
   margin: 0;
   line-height: 1;
+  position: relative;
+  margin-top: 3.5em;
 }
 
 .entry-title {
@@ -159,4 +167,165 @@ a {
   margin: 0;
   color: #fff;
   font-size: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.entry-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  transform: translateX(50%);
+  color: #ff0066;
+  border-radius: 100%;
+  border: 20px solid #ff0066;
+  background: #fff;
+  width: 120px;
+  height: 120px;
+}
+
+/* Directions */
+
+.direction {
+  padding: 0 1rem;
+}
+
+.location-description {
+  max-width: 27.5rem;
+}
+.location-description h3 {
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.locations {
+  display: flex;
+  max-width: 76.25rem;
+  margin: 0 auto;
+  align-items: center;
+  gap: 7.5rem;
+  margin-bottom: 3rem;
+}
+
+.embedded-map {
+  width: 38.75rem;
+  border: none;
+  height: 36.25rem;
+}
+
+/* Footer */
+.site-footer {
+  border-top: solid 1px #cccc;
+  padding: 0 1rem;
+  padding-top: 3.125rem;
+}
+
+.site-info {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1.875rem;
+  font-family: sans-serif;
+}
+
+.social-media-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* Media Query */
+@media (max-width: 1100px) {
+  .hero-text {
+    font-size: 3.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.3125rem;
+  }
+
+  .intro {
+    padding: 5.3rem 8.8rem;
+  }
+
+  .intro-description {
+    font-size: 2.25rem;
+  }
+
+  .entry-number {
+    width: 80px;
+    height: 80px;
+  }
+
+  .entry-header {
+    margin-top: 1.5em;
+  }
+
+  .embedded-map {
+    width: 32.75rem;
+    height: 30.25rem;
+  }
+
+  .locations {
+    gap: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-list-grid {
+    grid-template-columns: 1fr;
+    max-width: 30.25rem;
+  }
+  .locations {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 550px) {
+  .menu {
+    gap: 20px;
+  }
+  .logo {
+    width: 3.125rem;
+    height: 4.1875rem;
+  }
+  .hero {
+    padding: 8.8em 2.5em 3.1em 2.5em;
+  }
+  .hero-description {
+    max-width: 20rem;
+    margin: 0 auto;
+  }
+  .container {
+    max-width: 480px;
+  }
+  .intro {
+    padding: 8.84375rem 1rem;
+  }
+
+  .menu-list-grid {
+    max-width: 25.25rem;
+  }
+
+  .map-inner {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .map {
+    width: 100%;
+  }
+  .embedded-map {
+    height: 400px;
+  }
+
+  .site-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  .social-media-links {
+    justify-content: center;
+  }
 }
