@@ -145,11 +145,11 @@ function coolmat_scripts()
 {
 	wp_enqueue_style('coolmat-style', get_stylesheet_uri(), array(), _S_VERSION);
 
-	wp_enqueue_style('coolmat-custom', get_template_directory_uri() . '/css/custom.css');
+	wp_enqueue_style('coolmat-custom', get_template_directory_uri() . '/css/main.css');
 
 	wp_style_add_data('coolmat-style', 'rtl', 'replace');
 
-	wp_enqueue_script('coolmat-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+	wp_enqueue_script('coolmat-script', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -183,3 +183,48 @@ require get_template_directory() . '/inc/customizer.php';
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
+
+
+/* ------- Line Break Shortcode --------*/
+function line_break_shortcode()
+{
+	return '<br />';
+}
+add_shortcode('br', 'line_break_shortcode');
+
+
+
+// Register Custom Post Type
+function custom_intro_type()
+{
+	$labels = array(
+		'name'                  => _x('Intro', 'Post Type General Name', 'text_domain'),
+		'singular_name'         => _x('Intro', 'Post Type Singular Name', 'text_domain'),
+	);
+	$args = array(
+		'labels'                => $labels,
+		'taxonomies'            => array('category', 'post_tag'),
+		'public'                => true,
+
+	);
+	register_post_type('intro', $args);
+}
+add_action('init', 'custom_intro_type', 0);
+
+function custom_location_type()
+{
+	$labels = array(
+		'name'                  => _x('Locations', 'Post Type General Name', 'text_domain'),
+		'singular_name'         => _x('Location', 'Post Type Singular Name', 'text_domain'),
+	);
+	$args = array(
+		'labels'                => $labels,
+		'taxonomies'            => array('category'),
+		'public'                => true,
+
+	);
+	register_post_type('location', $args);
+}
+add_action('init', 'custom_location_type', 0);

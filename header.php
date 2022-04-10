@@ -1,16 +1,3 @@
-<?php
-
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package coolmat
- */
-
-?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 
@@ -45,11 +32,10 @@
             )
           );
           ?>
-        </nav><!-- #site-navigation -->
+        </nav>
 
 
-        <!-- TODO: Make this work -->
-        <div class="language-select">KOR | ENG</div>
+        <div class="language-select" id="language-selector"><a lang="ko-KR" hreflang="ko-KR" href="<?php echo site_url('/ko') ?>" id='kor'>KOR</a>| <a id='eng' lang="en-US" hreflang="en-US" href="<?php echo site_url() ?>">ENG</a></div>
       </div>
 
-    </header><!-- #masthead -->
+    </header>
